@@ -14,29 +14,29 @@ class Add : public Base {
 	//	Op* l;
 	//	Op* r;
 	public:
-		Add(Op* left, Op* right){
-			this-> l = left;
-			this-> r = right;
-		//	leftVal = left->evaluate();
-		//	rightVal = right->evaluate();
-		//	leftStr = left->stringify();
-		//	rightStr = right->stringify();
+		Add(Base* left, Base* right){
+		//	this-> l = left;
+		//	this-> r = right;
+			leftVal = left->evaluate();
+			rightVal = right->evaluate();
+			leftStr = left->stringify();
+			rightStr = right->stringify();
 		}
 		virtual double evaluate() {
-			return l->evaluate() + r->evaluate();
-		//	return (leftVal + rightVal);
+		//	return l->evaluate() + r->evaluate();
+			return (leftVal + rightVal);
 		}
 		virtual string stringify() {
-			return "(" + l->stringify() + " + " + r->stringify() + ")";
-		//	return ("(" + leftStr + " + " + rightStr + ")" );
+		//	return "(" + l->stringify() + " + " + r->stringify() + ")";
+			return ("(" + leftStr + " + " + rightStr + ")" );
 		}
 	private:
-	//	double leftVal;
-	//	double rightVal;
-	//	string leftStr;
-	//	string rightStr;
-		Op* l;
-		Op* r;
+		double leftVal;
+		double rightVal;
+		string leftStr;
+		string rightStr;
+	//	Op* l;
+	//	Op* r;
 };
 
 #endif

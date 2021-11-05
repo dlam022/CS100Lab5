@@ -8,10 +8,10 @@ using namespace std;
 
 class Mult : public Base {
 	private:
-		Op* l;
-		Op* r;
+		Base* l;
+		Base* r;
 	public: 
-		Mult(Op* left, Op* right) {
+		Mult(Base* left, Base* right) {
 			this->l = left;
 			this->r = right;
 		}
