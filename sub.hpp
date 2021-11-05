@@ -8,9 +8,9 @@ using namespace std;
 
 
 class Sub : public Base {
-	private: 
-		Op* l;
-		Op* r;
+//	private: 
+//		Op* l;
+//		Op* r;
 	public:
 		Sub(Op* left, Op* right) {
 			this->l = left;
@@ -18,9 +18,15 @@ class Sub : public Base {
 		}
 		virtual double evaluate() {
 			return l->evaluate() - r->evaluate();
-		virtual string stringify() {
-			return "(" + l->stringify() + "-" + r->stringify() + ")";
 		}
+
+		virtual string stringify() {
+			return "(" + l->stringify() + " - " + r->stringify() + ")";
+		}
+	private:
+		Op* l;
+		Op* r;
+
 };
 
 #endif
